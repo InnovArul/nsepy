@@ -28,12 +28,12 @@ NSE_SYMBOL_COUNT_URL = 'http://www.nseindia.com/marketinfo/sym_map/symbolCount.j
 symbol_count_url = URLFetchSession(url='http://www.nseindia.com/marketinfo/sym_map/symbolCount.jsp')
 
 def get_symbol_count(symbol):
-    try:
-        return symbol_count[symbol]
-    except:
-        cnt = symbol_count_url(symbol=symbol).text.lstrip().rstrip()
-        symbol_count[symbol] = cnt
-        return cnt
+    # try:
+    #     return symbol_count[symbol]
+    # except:
+    cnt = symbol_count_url(symbol=symbol).text.lstrip().rstrip()
+    symbol_count[symbol] = cnt
+    return cnt
 
 
 """
